@@ -1,1 +1,7 @@
 # Visual-QA-System
+
+## Methods
+Our study aimed to investigate the impact of freezing multiple layers in the ViLT (Vision-and-Language Transformer) model on training time and performance. The ViLT model, renowned for its ability to seamlessly integrate visual and textual information, was fine-tuned using the COCO dataset, which features images paired with corresponding questions and annotations. This dataset served as the bedrock for training two distinct subsets: one tailored for binary (yes/no) classification and another for numerical predictions. For binary classification tasks, we augmented the ViLT architecture with an additional classification layer positioned just before the output layer. Conversely, for numerical predictions, we filtered output values to be less than 10 and employed regression techniques for model training and validation.
+
+## Model Architecture and Training
+Harnessing the Hugging Face Transformers library, we instantiated the pre-trained ViLT model and initialized its weights using pre-existing parameters. Our experimental design centered on systematically freezing layers within the ViLT architecture, beginning from the top and gradually moving towards the bottom. This approach allowed us to evaluate the impact of restricting updates to specific layers on overall model performance. By iteratively fine-tuning the model with varying degrees of layer freezing, we aimed to discern patterns in training time and accuracy, providing insights into the optimal balance between computational efficiency and predictive power.
